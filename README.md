@@ -6,7 +6,7 @@ Get time passed since you've started node.js process.
 
 ```javascript
 // 1. Set global.appStartTime before you load any node.js modules.
-global.appStartTime = Date.now()
+require('since-app-start').start()
 
 // 2. The following line would return a prepared for output string.
 require('since-app-start').addEntry('Loaded modules')
