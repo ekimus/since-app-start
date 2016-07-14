@@ -1,31 +1,22 @@
 'use strict';
 
 const debug = require('debug')('speed');
-const symbol = Symbol.for('since-app-start');
 const profilings = Object.create(null);
-
-const sinceStart = () => {
-  if (!(symbol in global)) {
-    throw new ReferenceError('.start() should be called first');
-  }
-  return Date.now() - global[symbol];
-};
+const startTime = global[Symbol.for('start-time')] || Date.now();
 
 const addEntry = name => {
-  const ms = sinceStart();
+  const ms = Date.now() - startTime;
   profilings[name] = ms;
   return `${name} ${ms} ms`;
 };
 
 module.exports = {
   profilings,
-  sinceStart,
   addEntry,
   profile(name) {
     return debug(addEntry(name));
   },
-  start() {
-    if (symbol in global) return;
-    global[symbol] = Date.now();
+  get sinceStart() {
+    return Date.now() - startTime;
   }
 };
