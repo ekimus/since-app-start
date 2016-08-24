@@ -1,6 +1,6 @@
 {
   "name": "since-app-start",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Get time passed since node.js app start. Similar to performance.now() from browsers.",
   "main": "index.js",
   "repository": {
