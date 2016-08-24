@@ -1,8 +1,8 @@
 'use strict';
 
-const debug = require('debug')('speed');
-const profilings = Object.create(null);
 const startTime = global[Symbol.for('start-time')] || Date.now();
+const profilings = Object.create(null);
+const debug = require('debug')('speed');
 
 const addEntry = name => {
   const ms = Date.now() - startTime;
