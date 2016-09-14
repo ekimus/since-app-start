@@ -14,4 +14,4 @@ require('since-app-start').addEntry('Loaded modules')
 
 ## License
 
-[The MIT License](https://raw.githubusercontent.com/paulmillr/mit/master/README.md)
+[The MIT License](https://github.com/paulmillr/mit)
